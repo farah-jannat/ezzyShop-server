@@ -14,7 +14,7 @@ const login = async (req, res) => {
       if (!isMatch) {
         return res.status(401).send({ message: "Password Not Match" });
       } else {
-        const token = jwt.sign({ id: user.id }, secertKey, { expiresIn: "1h" });
+        const token = jwt.sign({ id: user.id }, secertKey, { expiresIn: "100h" });
         res.status(200).send({
           status: "succesful",
           message: "Login Succesful",
