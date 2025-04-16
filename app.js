@@ -7,8 +7,6 @@ const app = express();
 const port = 8000;
 const database="mongodb+srv://farahjannatmithila:Yj9RBZesHnDHhYbj@cluster0.ngeelqa.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
-
-
 app.use(bodyParser.json());
 app.use(cors());
 connectdb(database);
