@@ -7,9 +7,11 @@ const updateuser = require('../controllers/user/updateuser.js');
 const authenticateToken = require('../middlewares/varifytoken.js');
 const deleteuser = require('../controllers/user/deleteuser.js');
 const frontendUpdateUser = require('../controllers/user/frontend/frontend_updateuser.js');
+const frontendUser = require('../controllers/user/frontend/frontend_usersingle.js');
 const router = express.Router();
 
 router.get('/', userlist);
+router.get('/userinfo', authenticateToken, frontendUser)
 router.get('/:id', usersingle);
 router.post('/register', register);
 router.post('/login',login);
