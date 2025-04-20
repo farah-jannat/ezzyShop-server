@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const createVariant = require("../controllers/productVariant/createVariant.js");
 const productVariantlist = require("../controllers/productVariant/productvariantlist.js");
+const deleteVariant = require("../controllers/productVariant/deleteVariant.js");
 
 router.post(
   "/",
@@ -14,5 +15,6 @@ router.post(
   createVariant
 );
 router.get("/id/:id", productVariantlist);
+router.delete("/:id", deleteVariant);
 
 module.exports = router;
