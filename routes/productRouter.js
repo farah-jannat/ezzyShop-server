@@ -3,6 +3,7 @@ const productlist = require("../controllers/product/productlist");
 const createProduct = require("../controllers/product/createProduct");
 const upload = require("../middlewares/image-uploader");
 const singleProduct = require("../controllers/product/singleProduct");
+const deleteProduct = require("../controllers/product/deleteProduct");
 const router = express.Router();
 
 router.get("/", productlist);
@@ -17,5 +18,6 @@ router.post(
   createProduct
 );
 router.get("/:id", singleProduct);
+router.delete("/:id", deleteProduct);
 
 module.exports = router;
