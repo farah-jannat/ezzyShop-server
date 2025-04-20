@@ -4,6 +4,7 @@ const createProduct = require("../controllers/product/createProduct");
 const upload = require("../middlewares/image-uploader");
 const singleProduct = require("../controllers/product/singleProduct");
 const deleteProduct = require("../controllers/product/deleteProduct");
+const updateproduct = require("../controllers/product/updateProduct");
 const router = express.Router();
 
 router.get("/", productlist);
@@ -19,5 +20,15 @@ router.post(
 );
 router.get("/:id", singleProduct);
 router.delete("/:id", deleteProduct);
+router.patch(
+  "/:id",
+  upload.fields([
+    { name: "product_image1", maxCount: 1 },
+    { name: "product_image2", maxCount: 1 },
+    { name: "product_image3", maxCount: 1 },
+    { name: "product_image4", maxCount: 1 },
+  ]),
+  updateproduct
+);
 
 module.exports = router;
