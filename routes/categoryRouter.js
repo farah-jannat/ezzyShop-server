@@ -7,6 +7,7 @@ const categorylistLevelOne = require("../controllers/productCategory/categorylis
 const categorySingle = require("../controllers/productCategory/categorySingle.js");
 const deleteCategory = require("../controllers/productCategory/deleteCategory.js");
 const updatedCategory = require("../controllers/productCategory/updateCategory.js");
+const frontend_category_list = require("../controllers/productCategory/frontend_category_list.js");
 
 routercate.post(
   "/",
@@ -22,4 +23,5 @@ routercate.patch(
   upload.fields([{ name: "category_image", maxCount: 1 }]),
   updatedCategory
 );
+routercate.get("/frontedcategorylist", frontend_category_list);
 module.exports = routercate;
