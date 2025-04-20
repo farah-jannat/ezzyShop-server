@@ -2,6 +2,7 @@ const express = require("express");
 const productlist = require("../controllers/product/productlist");
 const createProduct = require("../controllers/product/createProduct");
 const upload = require("../middlewares/image-uploader");
+const singleProduct = require("../controllers/product/singleProduct");
 const router = express.Router();
 
 router.get("/", productlist);
@@ -15,5 +16,6 @@ router.post(
   ]),
   createProduct
 );
+router.get("/:id", singleProduct);
 
 module.exports = router;
