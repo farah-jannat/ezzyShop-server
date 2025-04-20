@@ -1,6 +1,7 @@
 const express = require("express");
 const userrouter = require("./routes/userRouter.js");
 const categoryRouter = require("./routes/categoryRouter.js");
+const productRouter = require("./routes/productRouter.js");
 const connectdb = require("./db/connection.js");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -14,6 +15,7 @@ app.use(cors());
 connectdb(database);
 app.use("/api/user", userrouter);
 app.use("/api/category", categoryRouter);
+app.use("/api/product", productRouter);
 
 app.listen(port, () => {
   console.log(`server is ruuning at ${port}`);
