@@ -3,6 +3,7 @@ const router = express.Router();
 const createVariant = require("../controllers/productVariant/createVariant.js");
 const productVariantlist = require("../controllers/productVariant/productvariantlist.js");
 const deleteVariant = require("../controllers/productVariant/deleteVariant.js");
+const singleProductVarient = require("../controllers/productVariant/singleProductVariant.js");
 
 router.post(
   "/",
@@ -16,5 +17,6 @@ router.post(
 );
 router.get("/id/:id", productVariantlist);
 router.delete("/:id", deleteVariant);
+router.get("/:id", singleProductVarient);
 
 module.exports = router;
