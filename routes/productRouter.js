@@ -5,6 +5,7 @@ const upload = require("../middlewares/image-uploader");
 const singleProduct = require("../controllers/product/singleProduct");
 const deleteProduct = require("../controllers/product/deleteProduct");
 const updateproduct = require("../controllers/product/updateProduct");
+const frontend_productlist_bycategory = require("../controllers/product/frontend/frontend_productlist_bycategory.js");
 const router = express.Router();
 
 router.get("/", productlist);
@@ -30,5 +31,6 @@ router.patch(
   ]),
   updateproduct
 );
+router.get("/product-by-category/:id", frontend_productlist_bycategory);
 
 module.exports = router;
