@@ -6,6 +6,7 @@ const variantRouter = require("./routes/variantRouter.js");
 const connectdb = require("./db/connection.js");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const wishlist = require("./models/wishlist.js");
 const app = express();
 const port = 8000;
 const database =
@@ -18,6 +19,7 @@ app.use("/api/user", userrouter);
 app.use("/api/category", categoryRouter);
 app.use("/api/product", productRouter);
 app.use("/api/variant", variantRouter);
+app.use("/api/wishlist", wishlist);
 
 app.listen(port, () => {
   console.log(`server is ruuning at ${port}`);
