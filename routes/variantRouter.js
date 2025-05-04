@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const upload = require("../middlewares/image-uploader");
 const createVariant = require("../controllers/productVariant/createVariant.js");
 const productVariantlist = require("../controllers/productVariant/productvariantlist.js");
 const deleteVariant = require("../controllers/productVariant/deleteVariant.js");
