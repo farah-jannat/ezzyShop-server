@@ -8,3 +8,5 @@ const router = express.Router();
 router.post("/", authenticateToken, addtowishlist);
 router.get("/", wishlist_list);
 router.post("/removewishlist", authenticateToken, removewishlist);
+
+module.exports = router;
